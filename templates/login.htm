@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=11;IE=10;IE=9;IE=8;text/html; charset=utf-8" />
+<title>YinguOnline</title>
+<link href="/static/css/login.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="login-box">
+   <div class="login-box-wh">
+		<div class="box-mov"><span class="box-mov-s"></span><div class="box-mov-d"></div></div>
+		<div class="text-box to-index"><span class="to-index-m"></span><a href="#" target="_blank" title="Homepage">Yingu  Online</a></div>
+	</div>
+
+<form name="form1" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+	{% csrf_token %}
+	<div class="login-box-wh">
+		<div class="box-mov"><span class="box-mov-s"></span><div class="box-mov-d"></div></div>
+		<div class="text-box">
+			<input type="hidden" name="gotopage" value="<?php if(!empty($gotopage)) echo RemoveXSS($gotopage);?>" />
+			<input type="hidden" name="dopost" value="login" />
+			<input type="hidden" name="next" value="{{ next }}" />
+			<input name='adminstyle' type='hidden' value='newdedecms' />
+			<input name="username" type="text" value="user name" onfocus="if(value=='user name') {value=''}" onblur="if (value=='') {value='user name'}">
+		</div>
+	</div>
+	<div class="login-box-wh">
+		<div class="box-mov"><span class="box-mov-s"></span><div class="box-mov-d"></div></div>
+		<div class="text-box">
+			<input type="password" class="alltxt" name="password" value="password" onfocus="if(value=='password') {value=''}" onblur="if (value=='') {value='password'}"/>
+		</div>
+	</div>
+
+	<div class="login-box-wh text-box-login">
+		<div class="box-mov"><span class="box-mov-s"></span><div class="box-mov-d"></div></div>
+		<div class="text-box-login-btn"><span class="login-btn-m"></span><button type="submit" name="sm1" class="login-btn" onclick="this.form.submit();">Login</button></div>
+	</div>
+
+	</form>
+   <div class="login-top-time">
+	   <span id="time">Time:2016-07-26 11:46:12</span>
+	   {% if form.errors %}
+	   <span>用户名密码错误 </span>
+	   {% endif %}
+   </div>
+</div>
+<script src="/static/template/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+var today=new Date();
+var month = today.getMonth()+1
+var nowtime="Time:"+today.getFullYear()+"-"+ month +"-"+today.getDate()+" "+today.getHours()+":"+today.getMinutes()+":"+today.getSeconds()
+$('#time').text(nowtime)
+</script>
+</body>
+</html>

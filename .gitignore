@@ -1,0 +1,27 @@
+# python pyc
+*.pyc
+
+# caifu user file
+people/upload
+*.xlsx
+
+# change/upload
+change/upload
+
+# log
+*.log
+
+# out
+*.out
+
+# pid 
+*.pid
+
+#
+YinguOnline/settings.py
+
+# pycharm
+.idea
+
+# celery
+$celery_log_file
