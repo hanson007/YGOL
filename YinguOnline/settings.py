@@ -152,8 +152,7 @@ mail_host = "smtp.test.163.com"  # 设置服务器
 mail_user = "huangxiaoxue"  # 用户名
 mail_pass = "Hanson.123"  # 口令
 
-sender = 'huangxiaoxue@yingu.com'
-# sender = 'yinguonline@yingu.com'
+sender = '229396865@qq.com'
 # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 # 抄送
 cc = []
